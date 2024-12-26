@@ -1,5 +1,16 @@
 export const RENDER_LAYERS = {
-    Logo: "Logo",
+    Background: "Background",
+    Enemy: "Enemy",
+    Explosion: "Explosion",
+    Player: "Player",
+    Projectile: "Projectile",
+    Hud: "Hud",
 };
 
-export const COLLISION_LAYERS = {};
+export const COLLISION_LAYERS = {
+    Enemy: "Enemy",
+    Player: "Player",
+    EnemyProjectile: "EnemyProjectile",
+    PlayerProjectile: "PlayerProjectile",
+    StageBoundaries: "StageBoundaries",
+};
