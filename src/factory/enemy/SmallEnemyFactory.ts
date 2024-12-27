@@ -40,8 +40,8 @@ export const smallEnemyFactory = (assetManager: AssetManager, position: Vector2)
     }),
     new BoxCollider({
         layer: COLLISION_LAYERS.Enemy,
-        width: 16,
-        height: 16,
+        width: 14,
+        height: 14,
         physics: false,
     }),
     new EnemyMovements({

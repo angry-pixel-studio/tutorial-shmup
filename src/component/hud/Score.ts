@@ -1,3 +1,1 @@
-export class Score {
-    score: number = 0;
-}
+export class Score {}

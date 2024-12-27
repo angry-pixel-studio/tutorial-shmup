@@ -1,3 +1,4 @@
+import { GameController } from "@component/game/GameController";
 import { PlayerLives } from "@component/hud/PlayerLives";
 import { PlayerStatus } from "@component/player/PlayerStatus";
 import { PlayerWeapon } from "@component/player/PlayerWeapon";
@@ -7,12 +8,10 @@ import { GameSystem, Transform } from "angry-pixel";
 export class PlayerStatusSystem extends GameSystem {
     public onUpdate(): void {
         this.entityManager.search(PlayerStatus).forEach(({ entity, component: playerStatus }) => {
-            const playerLives = this.entityManager.search(PlayerLives)[0].component;
+            const gameController = this.entityManager.search(GameController)[0].component;
+            gameController.lives = Math.max(0, gameController.maxLives - playerStatus.hits);
 
-            if (playerLives.maxLives === 0) playerLives.maxLives = playerStatus.lives;
-            playerLives.lives = playerStatus.lives;
-
-            if (playerStatus.lives <= 0) {
+            if (gameController.lives === 0) {
                 const { position } = this.entityManager.getComponent(entity, Transform);
                 this.entityManager.createEntity(explosionFactory(this.assetManager, position.clone()));
 

@@ -1,4 +1,5 @@
 import { EnemyDamageController } from "@component/enemy/EnemyDamageController";
+import { GameController } from "@component/game/GameController";
 import { PlayerStatus } from "@component/player/PlayerStatus";
 import { COLLISION_LAYERS } from "@config/layers";
 import { explosionFactory } from "@factory/shared/ExplosionFactory";
@@ -27,6 +28,7 @@ export class EnemyDamageControllerSystem extends GameSystem {
                 const transform = this.entityManager.getComponent(entity, Transform);
                 this.entityManager.createEntity(explosionFactory(this.assetManager, transform.position));
                 this.entityManager.removeEntity(entity);
+                this.entityManager.search(GameController)[0].component.score += 1;
             }
         });
     }

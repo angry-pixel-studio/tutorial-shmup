@@ -1,5 +1,5 @@
 export class PlayerStatus {
-    lives: number = 3;
+    hits: number = 0;
     invulnerable: boolean = false;
     invulnerableTime: number = 2000;
 }

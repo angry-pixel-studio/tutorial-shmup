@@ -14,6 +14,11 @@ export const scoreFactory = (assetManager: AssetManager, position: Vector2) => [
         orientation: TextOrientation.Center,
         width: 128,
         height: 24,
+        shadow: {
+            color: "#000000",
+            offset: new Vector2(1, -1),
+            opacity: 0.7,
+        },
     }),
     Score,
 ];

@@ -42,7 +42,7 @@ export const playerFactory = (assetManager: AssetManager, position: Vector2) => 
     new BoxCollider({
         layer: COLLISION_LAYERS.Player,
         width: 16,
-        height: 16,
+        height: 12,
         offset: new Vector2(0, 4),
     }),
     PlayerMovements,

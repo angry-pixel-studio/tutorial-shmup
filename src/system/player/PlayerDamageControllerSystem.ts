@@ -12,7 +12,7 @@ export class PlayerDamageControllerSystem extends GameSystem {
             );
 
             if (collisions.length > 0 && !playerStatus.invulnerable) {
-                playerStatus.lives -= 1;
+                playerStatus.hits += 1;
                 playerStatus.invulnerable = true;
 
                 this.timeManager.setInterval({
